@@ -14,6 +14,8 @@
 
 #include "resource.h"       // main symbols
 
+
+
 /////////////////////////////////////////////////////////////////////////////
 // CHerdManagerApp:
 // See HerdManager.cpp for the implementation of this class
@@ -34,6 +36,7 @@ public:
 // Implementation
 
 public:
+	HICON LoadIconSm(UINT resId);
 	//{{AFX_MSG(CHerdManagerApp)
 	afx_msg void OnAppAbout();
 	afx_msg void OnHerdManager();
@@ -43,6 +46,9 @@ public:
 
 
 /////////////////////////////////////////////////////////////////////////////
+
+extern CHerdManagerApp theApp;
+
 
 //{{AFX_INSERT_LOCATION}}
 // Microsoft Visual C++ will insert additional declarations immediately before the previous line.

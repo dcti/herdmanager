@@ -37,6 +37,7 @@ public:
 
 // Implementation
 protected:
+	HICON m_hIconSm;
 	HICON m_hIcon;
 
 	// Generated message map functions

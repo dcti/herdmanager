@@ -65,14 +65,15 @@ BOOL CHerdManagerApp::InitInstance()
 
 	// To create the main window, this code creates a new frame window
 	// object and then sets it as the application's main window object.
-
 	CMainFrame* pFrame = new CMainFrame;
 	m_pMainWnd = pFrame;
 
-	// create and load the frame with its resources
 
+	// create and load the frame with its resources
 	pFrame->LoadFrame(IDR_MAINFRAME,
 		WS_OVERLAPPEDWINDOW, NULL, NULL);
+	pFrame->SetIcon(theApp.LoadIcon(IDR_MAINFRAME), TRUE);
+	pFrame->SetIcon(theApp.LoadIconSm(IDR_MAINFRAME), FALSE);
 
 
 	// The one and only window has been initialized, so show and update it.
@@ -97,4 +98,12 @@ void CHerdManagerApp::OnHerdManager()
 	// TODO: Add your command handler code here
 	CHerdManagerDialog herdmgrDlg(m_pMainWnd);
 	herdmgrDlg.DoModal();
+}
+
+
+
+HICON CHerdManagerApp::LoadIconSm(UINT resId)
+{
+	return (HICON) ::LoadImage(m_hInstance, MAKEINTRESOURCE(resId), 
+			IMAGE_ICON, 16, 16, LR_DEFAULTCOLOR | LR_SHARED);
 }

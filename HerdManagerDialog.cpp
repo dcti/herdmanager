@@ -3,6 +3,8 @@
 
 #include "stdafx.h"
 #include "HerdManagerDialog.h"
+#include "HerdManager.h"
+
 
 #ifdef _DEBUG
 #define new DEBUG_NEW
@@ -44,7 +46,8 @@ CHerdManagerDialog::CHerdManagerDialog(CWnd* pParent /*=NULL*/)
 		// NOTE: the ClassWizard will add member initialization here
 	//}}AFX_DATA_INIT
 	// Note that LoadIcon does not require a subsequent DestroyIcon in Win32
-	m_hIcon = AfxGetApp()->LoadIcon(IDR_MAINFRAME);
+	m_hIcon = theApp.LoadIcon(IDR_MAINFRAME);
+	m_hIconSm = theApp.LoadIconSm(IDR_MAINFRAME);
 }
 
 void CHerdManagerDialog::DoDataExchange(CDataExchange* pDX)
@@ -65,7 +68,7 @@ BOOL CHerdManagerDialog::OnInitDialog()
 	// Set the icon for this dialog.  The framework does this automatically
 	//  when the application's main window is not a dialog
 	SetIcon(m_hIcon, TRUE);			// Set big icon
-	SetIcon(m_hIcon, FALSE);		// Set small icon
+	SetIcon(m_hIconSm, FALSE);		// Set small icon
 	
 	// TODO: Add extra initialization here
 	
