@@ -43,19 +43,15 @@ protected:
 	//{{AFX_MSG(CHerdManagerDialog)
 	virtual BOOL OnInitDialog();
 	afx_msg void OnPaint();
-	afx_msg HCURSOR OnQueryDragIcon();
 	afx_msg void OnDefaultsetup();
 	afx_msg void OnAddcow();
-	afx_msg void OnAbout();
 	afx_msg void OnInstallservice();
-	afx_msg void OnQuit();
 	afx_msg void OnRemovecow();
 	afx_msg void OnRemoveservice();
 	afx_msg void OnSetup();
 	afx_msg void OnStartservice();
 	afx_msg void OnStopservice();
 	afx_msg void OnUpdatestatus();
-	afx_msg void OnClickCowgrid();
 	afx_msg void OnSize(UINT nType, int cx, int cy);
 	DECLARE_EVENTSINK_MAP()
 	//}}AFX_MSG

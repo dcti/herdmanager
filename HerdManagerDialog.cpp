@@ -14,12 +14,9 @@ static char THIS_FILE[] = __FILE__;
 BEGIN_MESSAGE_MAP(CHerdManagerDialog, CDialog)
 	//{{AFX_MSG_MAP(CHerdManagerDialog)
 	ON_WM_PAINT()
-	ON_WM_QUERYDRAGICON()
 	ON_BN_CLICKED(IDDEFAULTSETUP, OnDefaultsetup)
 	ON_BN_CLICKED(IDADDCOW, OnAddcow)
-	ON_BN_CLICKED(IDABOUT, OnAbout)
 	ON_BN_CLICKED(IDINSTALLSERVICE, OnInstallservice)
-	ON_BN_CLICKED(IDQUIT, OnQuit)
 	ON_BN_CLICKED(IDREMOVECOW, OnRemovecow)
 	ON_BN_CLICKED(IDREMOVESERVICE, OnRemoveservice)
 	ON_BN_CLICKED(IDSETUP, OnSetup)
@@ -33,7 +30,6 @@ END_MESSAGE_MAP()
 
 BEGIN_EVENTSINK_MAP(CHerdManagerDialog, CDialog)
     //{{AFX_EVENTSINK_MAP(CHerdManagerDialog)
-	ON_EVENT(CHerdManagerDialog, IDC_COWGRID, -600 /* Click */, OnClickCowgrid, VTS_NONE)
 	//}}AFX_EVENTSINK_MAP
 END_EVENTSINK_MAP()
 
@@ -106,13 +102,6 @@ void CHerdManagerDialog::OnPaint()
 	}
 }
 
-// The system calls this to obtain the cursor to display while the user drags
-//  the minimized window.
-HCURSOR CHerdManagerDialog::OnQueryDragIcon()
-{
-	return (HCURSOR) m_hIcon;
-}
-
 void CHerdManagerDialog::OnDefaultsetup() 
 {
 	// TODO: Add your control notification handler code here
@@ -125,17 +114,7 @@ void CHerdManagerDialog::OnAddcow()
 	
 }
 
-void CHerdManagerDialog::OnAbout() 
-{
-}
-
 void CHerdManagerDialog::OnInstallservice() 
-{
-	// TODO: Add your control notification handler code here
-	
-}
-
-void CHerdManagerDialog::OnQuit() 
 {
 	// TODO: Add your control notification handler code here
 	
@@ -251,12 +230,6 @@ void CMainFrame::OnFileServiceoff()
 }
 
 void CHerdManagerDialog::OnUpdatestatus() 
-{
-	// TODO: Add your control notification handler code here
-	
-}
-
-void CHerdManagerDialog::OnClickCowgrid() 
 {
 	// TODO: Add your control notification handler code here
 	

@@ -3,6 +3,7 @@
 
 #include "stdafx.h"
 #include "HerdManager.h"
+#include "HerdManagerDialog.h"
 #include "AboutDialog.h"
 #include "MainFrm.h"
 
@@ -18,6 +19,7 @@ static char THIS_FILE[] = __FILE__;
 BEGIN_MESSAGE_MAP(CHerdManagerApp, CWinApp)
 	//{{AFX_MSG_MAP(CHerdManagerApp)
 	ON_COMMAND(ID_APP_ABOUT, OnAppAbout)
+	ON_COMMAND(ID_HERDMANAGER, OnHerdManager)
 	//}}AFX_MSG_MAP
 END_MESSAGE_MAP()
 
@@ -90,3 +92,10 @@ void CHerdManagerApp::OnAppAbout()
 }
 
 
+
+void CHerdManagerApp::OnHerdManager() 
+{
+	// TODO: Add your command handler code here
+	CHerdManagerDialog herdmgrDlg(m_pMainWnd);
+	herdmgrDlg.DoModal();
+}

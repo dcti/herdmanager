@@ -2,5 +2,6 @@
 *.ncb
 *.opt
 *.plg
+*.clw
 DEBUG
 RELEASE
