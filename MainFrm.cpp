@@ -25,6 +25,10 @@ BEGIN_MESSAGE_MAP(CMainFrame, CFrameWnd)
 	ON_UPDATE_COMMAND_UI(ID_FILE_SERVICEOFF, OnUpdateFileServiceoff)
 	ON_COMMAND(ID_FILE_SERVICEON, OnFileServiceon)
 	ON_COMMAND(ID_FILE_SERVICEOFF, OnFileServiceoff)
+	ON_COMMAND(ID_VIEW_ICONICTOOLBAR, OnViewIconicToolbar)
+	ON_UPDATE_COMMAND_UI(ID_VIEW_ICONICTOOLBAR, OnUpdateViewIconicToolbar)
+	ON_COMMAND(ID_VIEW_TOOLBAR, OnViewToolbar)
+	ON_UPDATE_COMMAND_UI(ID_VIEW_TOOLBAR, OnUpdateViewToolbar)
 	//}}AFX_MSG_MAP
 END_MESSAGE_MAP()
 
@@ -61,27 +65,26 @@ int CMainFrame::OnCreate(LPCREATESTRUCT lpCreateStruct)
 		return -1;
 	}
 	
-	// Create the toolbars and rebars.
-	if (!m_wndToolBar.CreateEx(this) ||
+
+	// Create the toolbars.
+	if (!m_wndToolBar.Create(this, WS_CHILD | WS_VISIBLE | CBRS_TOP | CBRS_TOOLTIPS | CBRS_FLYBY) ||
 		!m_wndToolBar.LoadToolBar(IDR_MAINFRAME))
 	{
 		TRACE0("Failed to create toolbar\n");
 		return -1;      // fail to create
 	}
-
-	if (!m_wndDlgBar.Create(this, IDD_DIALOGBAR, CBRS_RIGHT, -1))
+	
+	if (!m_wndDlgBar.Create(this, IDD_DIALOGBAR, WS_CHILD | WS_VISIBLE | CBRS_TOP, -1))
 	{
 		TRACE0("Failed to create dialogbar\n");
 		return -1;		// fail to create
 	}
-	
-	if (!m_wndReBar.Create(this) ||
-		!m_wndReBar.AddBar(&m_wndToolBar) ||
-		!m_wndReBar.AddBar(&m_wndDlgBar))
-	{
-		TRACE0("Failed to create rebar\n");
-		return -1;      // fail to create
-	}
+
+
+	// Update the views of the toolbar.
+	m_useIconicToolbar = false;
+	m_showToolbar = true;
+	OnViewIconicToolbar();
 
 
 	// Create the status bar at the bottom of the window.
@@ -92,10 +95,6 @@ int CMainFrame::OnCreate(LPCREATESTRUCT lpCreateStruct)
 		TRACE0("Failed to create status bar\n");
 		return -1;      // fail to create
 	}
-
-	// TODO: Remove this if you don't want tool tips
-	m_wndToolBar.SetBarStyle(m_wndToolBar.GetBarStyle() |
-		CBRS_TOOLTIPS | CBRS_FLYBY);
 
 	return 0;
 }
@@ -235,4 +234,30 @@ void CMainFrame::OnFileServiceoff()
 		}
 		CloseServiceHandle(sc_handle);
 	}
+}
+
+void CMainFrame::OnViewIconicToolbar() 
+{
+	m_useIconicToolbar = !m_useIconicToolbar;
+	ShowControlBar(&m_wndToolBar, m_showToolbar && m_useIconicToolbar, FALSE);
+	ShowControlBar(&m_wndDlgBar, m_showToolbar && !m_useIconicToolbar, FALSE);
+}
+
+void CMainFrame::OnUpdateViewIconicToolbar(CCmdUI* pCmdUI) 
+{
+	pCmdUI->SetCheck(m_useIconicToolbar);
+	pCmdUI->Enable(m_showToolbar);
+}
+
+
+void CMainFrame::OnViewToolbar() 
+{
+	m_showToolbar = !m_showToolbar;
+	ShowControlBar(&m_wndToolBar, m_showToolbar && m_useIconicToolbar, FALSE);
+	ShowControlBar(&m_wndDlgBar, m_showToolbar && !m_useIconicToolbar, FALSE);
+}
+
+void CMainFrame::OnUpdateViewToolbar(CCmdUI* pCmdUI) 
+{
+	pCmdUI->SetCheck(m_showToolbar);
 }

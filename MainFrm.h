@@ -45,12 +45,13 @@ public:
 protected:  // control bar embedded members
 	CStatusBar  m_wndStatusBar;
 	CToolBar    m_wndToolBar;
-	CReBar      m_wndReBar;
 	CDialogBar      m_wndDlgBar;
 	CChildView    m_wndView;
 
 // Generated message map functions
 protected:
+	bool m_showToolbar;
+	bool m_useIconicToolbar;
 	//{{AFX_MSG(CMainFrame)
 	afx_msg int OnCreate(LPCREATESTRUCT lpCreateStruct);
 	afx_msg void OnSetFocus(CWnd *pOldWnd);
@@ -58,6 +59,10 @@ protected:
 	afx_msg void OnUpdateFileServiceoff(CCmdUI* pCmdUI);
 	afx_msg void OnFileServiceon();
 	afx_msg void OnFileServiceoff();
+	afx_msg void OnViewIconicToolbar();
+	afx_msg void OnUpdateViewIconicToolbar(CCmdUI* pCmdUI);
+	afx_msg void OnViewToolbar();
+	afx_msg void OnUpdateViewToolbar(CCmdUI* pCmdUI);
 	//}}AFX_MSG
 	DECLARE_MESSAGE_MAP()
 };

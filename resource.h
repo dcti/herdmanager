@@ -28,6 +28,7 @@
 #define ID_FILE_SERVICEOFF              32774
 #define ID_COW_NEW                      32775
 #define ID_HERDMANAGER                  32776
+#define ID_VIEW_ICONICTOOLBAR           32777
 
 // Next default values for new objects
 // 
@@ -35,7 +36,7 @@
 #ifndef APSTUDIO_READONLY_SYMBOLS
 #define _APS_3D_CONTROLS                     1
 #define _APS_NEXT_RESOURCE_VALUE        137
-#define _APS_NEXT_COMMAND_VALUE         32777
+#define _APS_NEXT_COMMAND_VALUE         32778
 #define _APS_NEXT_CONTROL_VALUE         1005
 #define _APS_NEXT_SYMED_VALUE           103
 #endif
