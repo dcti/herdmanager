@@ -110,14 +110,6 @@ SOURCE=.\HerdManagerDialog.cpp
 # End Source File
 # Begin Source File
 
-SOURCE=.\Main_test.cpp
-# End Source File
-# Begin Source File
-
-SOURCE=.\MainFrame.cpp
-# End Source File
-# Begin Source File
-
 SOURCE=.\MainFrm.cpp
 # End Source File
 # Begin Source File
@@ -147,14 +139,6 @@ SOURCE=.\HerdManagerDialog.h
 # End Source File
 # Begin Source File
 
-SOURCE=.\Main_test.h
-# End Source File
-# Begin Source File
-
-SOURCE=.\MainFrame.h
-# End Source File
-# Begin Source File
-
 SOURCE=.\MainFrm.h
 # End Source File
 # Begin Source File
@@ -180,25 +164,6 @@ SOURCE=.\res\Toolbar.bmp
 # End Group
 # End Target
 # End Project
-# Section HerdManager : {0ECD9B62-23AA-11D0-B351-00A0C9055D8E}
-# 	2:5:Class:CMSHFlexGrid
-# 	2:10:HeaderFile:mshflexgrid.h
-# 	2:8:ImplFile:mshflexgrid.cpp
-# End Section
-# Section HerdManager : {BD6D5970-614A-11D2-883C-82729A77E70C}
-# 	2:21:DefaultSinkHeaderFile:browsefolder.h
-# 	2:16:DefaultSinkClass:CBrowseFolder
-# End Section
-# Section HerdManager : {0000050E-0000-0010-8000-00AA006D2EA4}
-# 	2:5:Class:CRecordset1
-# 	2:10:HeaderFile:recordset.h
-# 	2:8:ImplFile:recordset.cpp
-# End Section
-# Section HerdManager : {BD6D596F-614A-11D2-883C-82729A77E70C}
-# 	2:5:Class:CBrowseFolder
-# 	2:10:HeaderFile:browsefolder.h
-# 	2:8:ImplFile:browsefolder.cpp
-# End Section
 # Section HerdManager : {0ECD9B64-23AA-11D0-B351-00A0C9055D8E}
 # 	2:21:DefaultSinkHeaderFile:mshflexgrid.h
 # 	2:16:DefaultSinkClass:CMSHFlexGrid
@@ -212,4 +177,23 @@ SOURCE=.\res\Toolbar.bmp
 # 	2:5:Class:CPicture
 # 	2:10:HeaderFile:picture.h
 # 	2:8:ImplFile:picture.cpp
+# End Section
+# Section HerdManager : {BD6D5970-614A-11D2-883C-82729A77E70C}
+# 	2:21:DefaultSinkHeaderFile:browsefolder.h
+# 	2:16:DefaultSinkClass:CBrowseFolder
+# End Section
+# Section HerdManager : {0ECD9B62-23AA-11D0-B351-00A0C9055D8E}
+# 	2:5:Class:CMSHFlexGrid
+# 	2:10:HeaderFile:mshflexgrid.h
+# 	2:8:ImplFile:mshflexgrid.cpp
+# End Section
+# Section HerdManager : {0000050E-0000-0010-8000-00AA006D2EA4}
+# 	2:5:Class:CRecordset1
+# 	2:10:HeaderFile:recordset.h
+# 	2:8:ImplFile:recordset.cpp
+# End Section
+# Section HerdManager : {BD6D596F-614A-11D2-883C-82729A77E70C}
+# 	2:5:Class:CBrowseFolder
+# 	2:10:HeaderFile:browsefolder.h
+# 	2:8:ImplFile:browsefolder.cpp
 # End Section
