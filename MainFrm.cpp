@@ -82,7 +82,7 @@ int CMainFrame::OnCreate(LPCREATESTRUCT lpCreateStruct)
 
 
 	// Update the views of the toolbar.
-	m_useIconicToolbar = false;
+	m_useIconicToolbar = true;
 	m_showToolbar = true;
 	OnViewIconicToolbar();
 
