@@ -67,6 +67,10 @@ int CChildView::OnCreate(LPCREATESTRUCT lpCreateStruct)
 	// Add all of the list columns.
 	m_listctrl.InsertColumn(0, "Computer Name", LVCFMT_LEFT, 100);
 	m_listctrl.InsertColumn(1, "Status", LVCFMT_LEFT, 50);
+	m_listctrl.InsertColumn(2, "Client ver", LVCFMT_LEFT, 75);
+	m_listctrl.InsertColumn(3, "Client e-mail", LVCFMT_LEFT, 150);
+	m_listctrl.InsertColumn(4, "Service Name", LVCFMT_LEFT, 100);
+	m_listctrl.InsertColumn(5, "Service Path", LVCFMT_LEFT, 150);
 	
 	return 0;
 }

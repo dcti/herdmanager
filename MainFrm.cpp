@@ -109,8 +109,8 @@ BOOL CMainFrame::PreCreateWindow(CREATESTRUCT& cs)
 	//  the CREATESTRUCT cs
 	cs.dwExStyle &= ~WS_EX_CLIENTEDGE;
 	cs.lpszClass = AfxRegisterWndClass(0);
-	cs.cx = 400;
-	cs.cy = 500;
+	cs.cx = 600;
+	cs.cy = 400;
 	return TRUE;
 }
 
