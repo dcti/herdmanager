@@ -1,0 +1,58 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: HerdManager - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "c:\Volatile\temp\RSP1E3.tmp" with contents
+[
+/nologo /MTd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_MBCS" /FR"Debug/" /Fp"Debug/HerdManager.pch" /Yu"stdafx.h" /Fo"Debug/" /Fd"Debug/" /FD /GZ /c 
+"C:\dev\MyProjects\HerdManager\MainFrm.cpp"
+]
+Creating command line "cl.exe @c:\Volatile\temp\RSP1E3.tmp" 
+Creating temporary file "c:\Volatile\temp\RSP1E4.tmp" with contents
+[
+/nologo /subsystem:windows /incremental:yes /pdb:"Debug/HerdManager.pdb" /debug /machine:I386 /out:"Debug/HerdManager.exe" /pdbtype:sept 
+.\Debug\ChildView.obj
+.\Debug\font.obj
+.\Debug\HerdManager.obj
+.\Debug\Main_test.obj
+.\Debug\MainFrame.obj
+.\Debug\MainFrm.obj
+.\Debug\mshflexgrid.obj
+.\Debug\picture.obj
+.\Debug\recordset.obj
+.\Debug\StdAfx.obj
+.\Debug\HerdManager.res
+]
+Creating command line "link.exe @c:\Volatile\temp\RSP1E4.tmp"
+<h3>Output Window</h3>
+Compiling...
+MainFrm.cpp
+Linking...
+Creating temporary file "c:\Volatile\temp\RSP1E5.tmp" with contents
+[
+/nologo /o"Debug/HerdManager.bsc" 
+.\Debug\StdAfx.sbr
+.\Debug\ChildView.sbr
+.\Debug\font.sbr
+.\Debug\HerdManager.sbr
+.\Debug\Main_test.sbr
+.\Debug\MainFrame.sbr
+.\Debug\MainFrm.sbr
+.\Debug\mshflexgrid.sbr
+.\Debug\picture.sbr
+.\Debug\recordset.sbr]
+Creating command line "bscmake.exe @c:\Volatile\temp\RSP1E5.tmp"
+Creating browse info file...
+<h3>Output Window</h3>
+
+
+
+<h3>Results</h3>
+HerdManager.exe - 0 error(s), 0 warning(s)
+</pre>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: HerdManagerDialog - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "c:\Volatile\temp\RSPEA.tmp" with contents
+[
+/nologo /MTd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_MBCS" /FR"Debug/" /Fp"Debug/HerdManagerDialog.pch" /Yu"stdafx.h" /Fo"Debug/" /Fd"Debug/" /FD /GZ /c 
+"C:\dev\MyProjects\HerdManager\HerdManagerDialog\HerdManagerDialog.cpp"
+"C:\dev\MyProjects\HerdManager\HerdManagerDialog\HerdManagerDialogDlg.cpp"
+"C:\dev\MyProjects\HerdManager\HerdManagerDialog\CowGrid.cpp"
+"C:\dev\MyProjects\HerdManager\HerdManagerDialog\mshflexgrid.cpp"
+"C:\dev\MyProjects\HerdManager\HerdManagerDialog\recordset.cpp"
+"C:\dev\MyProjects\HerdManager\HerdManagerDialog\font.cpp"
+"C:\dev\MyProjects\HerdManager\HerdManagerDialog\picture.cpp"
+]
+Creating command line "cl.exe @c:\Volatile\temp\RSPEA.tmp" 
+Creating temporary file "c:\Volatile\temp\RSPEB.tmp" with contents
+[
+/nologo /MTd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_MBCS" /FR"Debug/" /Fp"Debug/HerdManagerDialog.pch" /Yc"stdafx.h" /Fo"Debug/" /Fd"Debug/" /FD /GZ /c 
+"C:\dev\MyProjects\HerdManager\HerdManagerDialog\StdAfx.cpp"
+]
+Creating command line "cl.exe @c:\Volatile\temp\RSPEB.tmp" 
+<h3>Output Window</h3>
+Compiling...
+StdAfx.cpp
+Compiling...
+HerdManagerDialog.cpp
+HerdManagerDialogDlg.cpp
+CowGrid.cpp
+mshflexgrid.cpp
+recordset.cpp
+font.cpp
+picture.cpp
+Generating Code...
+Creating temporary file "c:\Volatile\temp\RSPEC.tmp" with contents
+[
+/nologo /subsystem:windows /incremental:yes /pdb:"Debug/HerdManagerDialog.pdb" /debug /machine:I386 /out:"Debug/HerdManagerDialog.exe" /pdbtype:sept 
+.\Debug\HerdManagerDialog.obj
+.\Debug\HerdManagerDialogDlg.obj
+.\Debug\StdAfx.obj
+.\Debug\HerdManagerDialog.res
+.\Debug\CowGrid.obj
+.\Debug\mshflexgrid.obj
+.\Debug\recordset.obj
+.\Debug\font.obj
+.\Debug\picture.obj
+]
+Creating command line "link.exe @c:\Volatile\temp\RSPEC.tmp"
+<h3>Output Window</h3>
+Linking...
+Creating command line "bscmake.exe /nologo /o"Debug/HerdManagerDialog.bsc"  .\Debug\StdAfx.sbr .\Debug\HerdManagerDialog.sbr .\Debug\HerdManagerDialogDlg.sbr .\Debug\CowGrid.sbr .\Debug\mshflexgrid.sbr .\Debug\recordset.sbr .\Debug\font.sbr .\Debug\picture.sbr"
+Creating browse info file...
+<h3>Output Window</h3>
+
+
+
+<h3>Results</h3>
+HerdManagerDialog.exe - 0 error(s), 0 warning(s)
+</pre>
+</body>
+</html>

@@ -1,0 +1,5 @@
+SCC = This is a Source Code Control file
+
+[HerdManagerDialog.dsp]
+SCC_Aux_Path = "C:\dev\Common\VSS"
+SCC_Project_Name = "$/Personal/HerdManagerDialog", MPAAAAAA
