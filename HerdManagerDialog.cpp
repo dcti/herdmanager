@@ -251,3 +251,4 @@ void CHerdManagerDialog::OnSize(UINT nType, int cx, int cy)
 
 	CDialog::OnSize(nType, cx, cy);
 }
+

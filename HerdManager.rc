@@ -194,6 +194,18 @@ BEGIN
     GROUPBOX        "Static",IDC_STATIC,194,21,70,46
 END
 
+IDD_DIALOGBAR DIALOG DISCARDABLE  0, 0, 185, 48
+STYLE WS_CHILD
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,7,7,45,14
+    PUSHBUTTON      "Cancel",IDCANCEL,7,26,45,15
+    PUSHBUTTON      "Cancel",IDCANCEL2,60,27,45,14
+    PUSHBUTTON      "Cancel",IDCANCEL3,60,7,45,14
+    PUSHBUTTON      "Cancel",IDCANCEL4,112,27,45,14
+    PUSHBUTTON      "Cancel",IDCANCEL5,112,7,45,14
+END
+
 
 #ifndef _MAC
 /////////////////////////////////////////////////////////////////////////////
@@ -272,6 +284,18 @@ BEGIN
         VERTGUIDE, 259
         TOPMARGIN, 7
         BOTTOMMARGIN, 223
+    END
+
+    IDD_DIALOGBAR, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 165
+        VERTGUIDE, 52
+        VERTGUIDE, 60
+        VERTGUIDE, 105
+        VERTGUIDE, 112
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 41
     END
 END
 #endif    // APSTUDIO_INVOKED

@@ -52,6 +52,7 @@ int CMainFrame::OnCreate(LPCREATESTRUCT lpCreateStruct)
 {
 	if (CFrameWnd::OnCreate(lpCreateStruct) == -1)
 		return -1;
+
 	// create a view to occupy the client area of the frame
 	if (!m_wndView.Create(NULL, NULL, AFX_WS_DEFAULT_VIEW,
 		CRect(0, 0, 0, 0), this, AFX_IDW_PANE_FIRST, NULL))
@@ -60,6 +61,7 @@ int CMainFrame::OnCreate(LPCREATESTRUCT lpCreateStruct)
 		return -1;
 	}
 	
+	// Create the toolbars and rebars.
 	if (!m_wndToolBar.CreateEx(this) ||
 		!m_wndToolBar.LoadToolBar(IDR_MAINFRAME))
 	{
@@ -67,13 +69,22 @@ int CMainFrame::OnCreate(LPCREATESTRUCT lpCreateStruct)
 		return -1;      // fail to create
 	}
 
+	if (!m_wndDlgBar.Create(this, IDD_DIALOGBAR, CBRS_RIGHT, -1))
+	{
+		TRACE0("Failed to create dialogbar\n");
+		return -1;		// fail to create
+	}
+	
 	if (!m_wndReBar.Create(this) ||
-		!m_wndReBar.AddBar(&m_wndToolBar))
+		!m_wndReBar.AddBar(&m_wndToolBar) ||
+		!m_wndReBar.AddBar(&m_wndDlgBar))
 	{
 		TRACE0("Failed to create rebar\n");
 		return -1;      // fail to create
 	}
 
+
+	// Create the status bar at the bottom of the window.
 	if (!m_wndStatusBar.Create(this) ||
 		!m_wndStatusBar.SetIndicators(indicators,
 		  sizeof(indicators)/sizeof(UINT)))
@@ -93,11 +104,13 @@ BOOL CMainFrame::PreCreateWindow(CREATESTRUCT& cs)
 {
 	if( !CFrameWnd::PreCreateWindow(cs) )
 		return FALSE;
+
 	// TODO: Modify the Window class or styles here by modifying
 	//  the CREATESTRUCT cs
-
 	cs.dwExStyle &= ~WS_EX_CLIENTEDGE;
 	cs.lpszClass = AfxRegisterWndClass(0);
+	cs.cx = 400;
+	cs.cy = 500;
 	return TRUE;
 }
 

@@ -60,7 +60,7 @@ BOOL CHerdManagerApp::InitInstance()
 	// Change the registry key under which our settings are stored.
 	// TODO: You should modify this string to be something appropriate
 	// such as the name of your company or organization.
-	SetRegistryKey(_T("distributed.net"));
+	SetRegistryKey(_T("Distributed Computing Technologies, Inc.\\HerdManager"));
 
 
 	// To create the main window, this code creates a new frame window
@@ -72,8 +72,7 @@ BOOL CHerdManagerApp::InitInstance()
 	// create and load the frame with its resources
 
 	pFrame->LoadFrame(IDR_MAINFRAME,
-		WS_OVERLAPPEDWINDOW | FWS_ADDTOTITLE, NULL,
-		NULL);
+		WS_OVERLAPPEDWINDOW, NULL, NULL);
 
 
 	// The one and only window has been initialized, so show and update it.

@@ -27,6 +27,7 @@ public:
 // Overrides
 	// ClassWizard generated virtual function overrides
 	//{{AFX_VIRTUAL(CChildView)
+	public:
 	protected:
 	virtual BOOL PreCreateWindow(CREATESTRUCT& cs);
 	//}}AFX_VIRTUAL
@@ -37,8 +38,10 @@ public:
 
 	// Generated message map functions
 protected:
+	CListCtrl m_listctrl;
 	//{{AFX_MSG(CChildView)
-	afx_msg void OnPaint();
+	afx_msg int OnCreate(LPCREATESTRUCT lpCreateStruct);
+	afx_msg void OnSize(UINT nType, int cx, int cy);
 	//}}AFX_MSG
 	DECLARE_MESSAGE_MAP()
 };

@@ -11,6 +11,17 @@
 static char THIS_FILE[] = __FILE__;
 #endif
 
+
+
+
+BEGIN_MESSAGE_MAP(CChildView,CWnd )
+	//{{AFX_MSG_MAP(CChildView)
+	ON_WM_CREATE()
+	ON_WM_SIZE()
+	//}}AFX_MSG_MAP
+END_MESSAGE_MAP()
+
+
 /////////////////////////////////////////////////////////////////////////////
 // CChildView
 
@@ -21,14 +32,6 @@ CChildView::CChildView()
 CChildView::~CChildView()
 {
 }
-
-
-BEGIN_MESSAGE_MAP(CChildView,CWnd )
-	//{{AFX_MSG_MAP(CChildView)
-	ON_WM_PAINT()
-	//}}AFX_MSG_MAP
-END_MESSAGE_MAP()
-
 
 /////////////////////////////////////////////////////////////////////////////
 // CChildView message handlers
@@ -46,12 +49,37 @@ BOOL CChildView::PreCreateWindow(CREATESTRUCT& cs)
 	return TRUE;
 }
 
-void CChildView::OnPaint() 
+
+
+
+int CChildView::OnCreate(LPCREATESTRUCT lpCreateStruct) 
 {
-	CPaintDC dc(this); // device context for painting
+	if (CWnd ::OnCreate(lpCreateStruct) == -1)
+		return -1;
 	
-	// TODO: Add your message handler code here
+	// TODO: Add your specialized creation code here
+	RECT clrect;
+	GetClientRect(&clrect);
+	if (!m_listctrl.Create(WS_VISIBLE | LVS_SHOWSELALWAYS | LVS_SINGLESEL | 
+		LVS_SORTASCENDING | LVS_REPORT | LVS_NOSORTHEADER, clrect, this, -1))
+		return -1;
+
+	// Add all of the list columns.
+	m_listctrl.InsertColumn(0, "Computer Name", LVCFMT_LEFT, 100);
+	m_listctrl.InsertColumn(1, "Status", LVCFMT_LEFT, 50);
 	
-	// Do not call CWnd::OnPaint() for painting messages
+	return 0;
 }
 
+void CChildView::OnSize(UINT nType, int cx, int cy) 
+{
+	CWnd ::OnSize(nType, cx, cy);
+	
+	// TODO: Add your message handler code here
+	RECT clrect;
+	GetClientRect(&clrect);
+	m_listctrl.SetWindowPos(NULL, clrect.left, clrect.top, 
+			(clrect.right - clrect.left), (clrect.bottom - clrect.top), 
+			SWP_NOREPOSITION | SWP_NOZORDER);
+	
+}

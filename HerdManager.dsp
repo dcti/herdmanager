@@ -40,6 +40,7 @@ RSC=rc.exe
 # PROP Use_Debug_Libraries 0
 # PROP Output_Dir "Release"
 # PROP Intermediate_Dir "Release"
+# PROP Ignore_Export_Lib 0
 # PROP Target_Dir ""
 # ADD BASE CPP /nologo /MT /W3 /GX /O2 /D "WIN32" /D "NDEBUG" /D "_WINDOWS" /Yu"stdafx.h" /FD /c
 # ADD CPP /nologo /MT /W3 /GX /O2 /D "WIN32" /D "NDEBUG" /D "_WINDOWS" /D "_MBCS" /Yu"stdafx.h" /FD /c
@@ -53,6 +54,7 @@ BSC32=bscmake.exe
 LINK32=link.exe
 # ADD BASE LINK32 /nologo /subsystem:windows /machine:I386
 # ADD LINK32 /nologo /subsystem:windows /machine:I386
+# SUBTRACT LINK32 /incremental:yes
 
 !ELSEIF  "$(CFG)" == "HerdManager - Win32 Debug"
 
@@ -65,6 +67,7 @@ LINK32=link.exe
 # PROP Use_Debug_Libraries 1
 # PROP Output_Dir "Debug"
 # PROP Intermediate_Dir "Debug"
+# PROP Ignore_Export_Lib 0
 # PROP Target_Dir ""
 # ADD BASE CPP /nologo /MTd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /Yu"stdafx.h" /FD /GZ /c
 # ADD CPP /nologo /MTd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_MBCS" /FR /Yu"stdafx.h" /FD /GZ /c
@@ -78,6 +81,7 @@ BSC32=bscmake.exe
 LINK32=link.exe
 # ADD BASE LINK32 /nologo /subsystem:windows /debug /machine:I386 /pdbtype:sept
 # ADD LINK32 /nologo /subsystem:windows /debug /machine:I386 /pdbtype:sept
+# SUBTRACT LINK32 /incremental:no
 
 !ENDIF 
 
@@ -178,14 +182,14 @@ SOURCE=.\res\Toolbar.bmp
 # 	2:10:HeaderFile:picture.h
 # 	2:8:ImplFile:picture.cpp
 # End Section
-# Section HerdManager : {BD6D5970-614A-11D2-883C-82729A77E70C}
-# 	2:21:DefaultSinkHeaderFile:browsefolder.h
-# 	2:16:DefaultSinkClass:CBrowseFolder
-# End Section
 # Section HerdManager : {0ECD9B62-23AA-11D0-B351-00A0C9055D8E}
 # 	2:5:Class:CMSHFlexGrid
 # 	2:10:HeaderFile:mshflexgrid.h
 # 	2:8:ImplFile:mshflexgrid.cpp
+# End Section
+# Section HerdManager : {BD6D5970-614A-11D2-883C-82729A77E70C}
+# 	2:21:DefaultSinkHeaderFile:browsefolder.h
+# 	2:16:DefaultSinkClass:CBrowseFolder
 # End Section
 # Section HerdManager : {0000050E-0000-0010-8000-00AA006D2EA4}
 # 	2:5:Class:CRecordset1
