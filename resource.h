@@ -13,16 +13,11 @@
 #define IDSTOPSERVICE                   7
 #define IDSETUP                         8
 #define IDDEFAULTSETUP                  10
-#define IDABOUT                         11
-#define IDQUIT                          12
 #define IDD_ABOUTBOX                    100
-#define IDD_MAIN_TEST_DIALOG            102
 #define IDD_ADDCOMPUTER                 102
 #define IDD_HERDMANAGERDIALOG_DIALOG    103
 #define IDR_MAINFRAME                   128
-#define IDR_HERDMATYPE                  129
 #define IDD_DIALOGBAR                   134
-#define IDC_COWGRID                     1000
 #define IDUPDATESTATUS                  1001
 #define IDC_NEWCOW                      1002
 #define IDADDCOW                        1002
