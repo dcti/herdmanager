@@ -50,7 +50,6 @@ BEGIN
     "LANGUAGE 9, 1\r\n"
     "#pragma code_page(1252)\r\n"
     "#endif //_WIN32\r\n"
-    "#include ""res\\HerdManager.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
     "#include ""afxres.rc""         // Standard components\r\n"
     "#endif\r\n"
     "\0"
@@ -157,15 +156,37 @@ BEGIN
     DEFPUSHBUTTON   "OK",IDOK,178,7,50,14,WS_GROUP
 END
 
-IDD_MAIN_TEST_DIALOG DIALOG DISCARDABLE  0, 0, 207, 46
+IDD_MAIN_TEST_DIALOG DIALOG DISCARDABLE  0, 0, 214, 49
 STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
 CAPTION "Add new cow"
 FONT 8, "MS Sans Serif"
 BEGIN
-    DEFPUSHBUTTON   "OK",IDOK,155,5,50,14
-    PUSHBUTTON      "Cancel",IDCANCEL,155,22,50,14
-    EDITTEXT        IDC_NEWCOW,10,20,140,10,ES_AUTOHSCROLL
-    LTEXT           "Enter name of new computer",IDC_STATIC,10,5,140,10
+    DEFPUSHBUTTON   "OK",IDOK,157,7,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,157,25,50,14
+    EDITTEXT        IDC_NEWCOW,7,21,140,12,ES_AUTOHSCROLL
+    LTEXT           "Enter name of new computer:",IDC_STATIC,7,7,140,10
+END
+
+IDD_HERDMANAGERDIALOG_DIALOG DIALOGEX 0, 0, 241, 193
+STYLE WS_MINIMIZEBOX | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU | 
+    WS_THICKFRAME
+EXSTYLE WS_EX_APPWINDOW
+CAPTION "Herd Manager"
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    PUSHBUTTON      "Update Status",IDUPDATESTATUS,175,5,60,14
+    PUSHBUTTON      "Add computer...",IDADDCOW,175,22,60,14
+    CONTROL         "",IDC_COWGRID,"{0ECD9B64-23AA-11D0-B351-00A0C9055D8E}",
+                    WS_TABSTOP,5,5,165,185
+    PUSHBUTTON      "Remove computer",IDREMOVECOW,175,39,60,14
+    PUSHBUTTON      "Install Service...",IDINSTALLSERVICE,175,56,60,14
+    PUSHBUTTON      "Remove Service",IDREMOVESERVICE,175,73,60,14
+    PUSHBUTTON      "Start Service",IDSTARTSERVICE,175,90,60,14
+    PUSHBUTTON      "Stop Service",IDSTOPSERVICE,175,107,60,14
+    PUSHBUTTON      "Setup",IDSETUP,175,124,60,14
+    PUSHBUTTON      "Default setup...",IDDEFAULTSETUP,175,141,60,14
+    PUSHBUTTON      "About...",IDABOUT,175,158,60,14
+    DEFPUSHBUTTON   "Quit",IDQUIT,175,175,60,14
 END
 
 
@@ -231,12 +252,56 @@ BEGIN
     IDD_MAIN_TEST_DIALOG, DIALOG
     BEGIN
         LEFTMARGIN, 7
-        RIGHTMARGIN, 200
+        RIGHTMARGIN, 207
         TOPMARGIN, 7
-        BOTTOMMARGIN, 39
+        BOTTOMMARGIN, 42
+    END
+
+    IDD_HERDMANAGERDIALOG_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 234
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 186
     END
 END
 #endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog Info
+//
+
+IDD_HERDMANAGERDIALOG_DIALOG DLGINIT
+BEGIN
+    IDC_COWGRID, 0x37a, 428, 0
+0x0024, 0x0000, 0x0031, 0x0046, 0x0033, 0x0044, 0x0035, 0x0035, 0x0032, 
+0x0032, 0x002d, 0x0033, 0x0046, 0x0034, 0x0032, 0x002d, 0x0031, 0x0031, 
+0x0064, 0x0031, 0x002d, 0x0042, 0x0032, 0x0046, 0x0041, 0x002d, 0x0030, 
+0x0030, 0x0041, 0x0030, 0x0043, 0x0039, 0x0030, 0x0038, 0x0046, 0x0042, 
+0x0035, 0x0035, 0x0012, 0x0000, 0x0001, 0x0000, 0x000a, 0x0000, 0x004c, 
+0x0000, 0x0000, 0x4321, 0x1234, 0x0008, 0x0000, 0x19a2, 0x0000, 0x1f1c, 
+0x0000, 0x6f42, 0x506f, 0x0006, 0x0000, 0x008c, 0x0000, 0x0002, 0x0000, 
+0x0002, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0001, 
+0x0000, 0x0005, 0x8000, 0x0008, 0x8000, 0x000f, 0x8000, 0x0012, 0x8000, 
+0x000d, 0x8000, 0x000e, 0x8000, 0x000f, 0x8000, 0x000f, 0x8000, 0x0012, 
+0x8000, 0xc0c0, 0x00c0, 0xc0c0, 0x00c0, 0x0000, 0x0000, 0x0000, 0xbf80, 
+0x0000, 0x0000, 0x0001, 0x0001, 0x0000, 0x0001, 0x0002, 0x0000, 0x0003, 
+0x0001, 0x0000, 0x0001, 0x0000, 0x0001, 0x0001, 0x0000, 0x0001, 0xffff, 
+0x0001, 0x0000, 0x0001, 0x0100, 0x0001, 0x0001, 0x0004, 0x0000, 0x0000, 
+0x0000, 0x0002, 0x0000, 0x0000, 0x0048, 0x0000, 0xffff, 0xffff, 0xffff, 
+0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0x0012, 0x8000, 0xffff, 0xffff, 
+0xffff, 0xffff, 0xc0c0, 0x00c0, 0x0000, 0xbf80, 0x0000, 0xbf80, 0x0000, 
+0x0000, 0x0002, 0x0000, 0x0000, 0x0000, 0x0001, 0xffff, 0x0000, 0xffff, 
+0xffff, 0xffff, 0x0000, 0x0000, 0x0001, 0x3601, 0x0000, 0x0000, 0xffff, 
+0xffff, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0001, 0x5203, 
+0x0be3, 0x8f91, 0x11ce, 0xe39d, 0xaa00, 0x4b00, 0x51b8, 0x0001, 0x0000, 
+0x0190, 0x4244, 0x0001, 0x4d0d, 0x2053, 0x6153, 0x736e, 0x5320, 0x7265, 
+0x6669, 0x0000, 0x0000, 0x0000, 0x5204, 0x0be3, 0x8f91, 0x11ce, 0xe39d, 
+0xaa00, 0x4b00, 0x51b8, 0x746c, 0x0000, 0x0000, 0x0000, 
+    0
+END
 
 
 /////////////////////////////////////////////////////////////////////////////
@@ -346,7 +411,6 @@ END
 LANGUAGE 9, 1
 #pragma code_page(1252)
 #endif //_WIN32
-#include "res\HerdManager.rc2"  // non-Microsoft Visual C++ edited resources
 #include "afxres.rc"         // Standard components
 #endif
 

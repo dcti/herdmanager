@@ -8,23 +8,29 @@
 #pragma once
 #endif // _MSC_VER > 1000
 
-/////////////////////////////////////////////////////////////////////////////
-// CHerdManagerDialogDlg dialog
+#ifndef __AFXWIN_H__
+	#error include 'stdafx.h' before including this file for PCH
+#endif
 
-class CHerdManagerDialogDlg : public CDialog
+#include "resource.h"       // main symbols
+
+/////////////////////////////////////////////////////////////////////////////
+// CHerdManagerDialog dialog
+
+class CHerdManagerDialog : public CDialog
 {
 // Construction
 public:
-	CHerdManagerDialogDlg(CWnd* pParent = NULL);	// standard constructor
+	CHerdManagerDialog(CWnd* pParent = NULL);	// standard constructor
 
 // Dialog Data
-	//{{AFX_DATA(CHerdManagerDialogDlg)
+	//{{AFX_DATA(CHerdManagerDialog)
 	enum { IDD = IDD_HERDMANAGERDIALOG_DIALOG };
 		// NOTE: the ClassWizard will add data members here
 	//}}AFX_DATA
 
 	// ClassWizard generated virtual function overrides
-	//{{AFX_VIRTUAL(CHerdManagerDialogDlg)
+	//{{AFX_VIRTUAL(CHerdManagerDialog)
 	protected:
 	virtual void DoDataExchange(CDataExchange* pDX);	// DDX/DDV support
 	//}}AFX_VIRTUAL
@@ -34,9 +40,8 @@ protected:
 	HICON m_hIcon;
 
 	// Generated message map functions
-	//{{AFX_MSG(CHerdManagerDialogDlg)
+	//{{AFX_MSG(CHerdManagerDialog)
 	virtual BOOL OnInitDialog();
-	afx_msg void OnSysCommand(UINT nID, LPARAM lParam);
 	afx_msg void OnPaint();
 	afx_msg HCURSOR OnQueryDragIcon();
 	afx_msg void OnDefaultsetup();

@@ -90,11 +90,11 @@ LINK32=link.exe
 # PROP Default_Filter "cpp;c;cxx;rc;def;r;odl;idl;hpj;bat"
 # Begin Source File
 
-SOURCE=.\ChildView.cpp
+SOURCE=.\AboutDialog.cpp
 # End Source File
 # Begin Source File
 
-SOURCE=.\font.cpp
+SOURCE=.\ChildView.cpp
 # End Source File
 # Begin Source File
 
@@ -103,6 +103,10 @@ SOURCE=.\HerdManager.cpp
 # Begin Source File
 
 SOURCE=.\HerdManager.rc
+# End Source File
+# Begin Source File
+
+SOURCE=.\HerdManagerDialog.cpp
 # End Source File
 # Begin Source File
 
@@ -118,18 +122,6 @@ SOURCE=.\MainFrm.cpp
 # End Source File
 # Begin Source File
 
-SOURCE=.\mshflexgrid.cpp
-# End Source File
-# Begin Source File
-
-SOURCE=.\picture.cpp
-# End Source File
-# Begin Source File
-
-SOURCE=.\recordset.cpp
-# End Source File
-# Begin Source File
-
 SOURCE=.\StdAfx.cpp
 # ADD CPP /Yc"stdafx.h"
 # End Source File
@@ -139,15 +131,19 @@ SOURCE=.\StdAfx.cpp
 # PROP Default_Filter "h;hpp;hxx;hm;inl"
 # Begin Source File
 
+SOURCE=.\AboutDialog.h
+# End Source File
+# Begin Source File
+
 SOURCE=.\ChildView.h
 # End Source File
 # Begin Source File
 
-SOURCE=.\font.h
+SOURCE=.\HerdManager.h
 # End Source File
 # Begin Source File
 
-SOURCE=.\HerdManager.h
+SOURCE=.\HerdManagerDialog.h
 # End Source File
 # Begin Source File
 
@@ -160,18 +156,6 @@ SOURCE=.\MainFrame.h
 # Begin Source File
 
 SOURCE=.\MainFrm.h
-# End Source File
-# Begin Source File
-
-SOURCE=.\mshflexgrid.h
-# End Source File
-# Begin Source File
-
-SOURCE=.\picture.h
-# End Source File
-# Begin Source File
-
-SOURCE=.\recordset.h
 # End Source File
 # Begin Source File
 
@@ -191,37 +175,19 @@ SOURCE=.\res\HerdManager.ico
 # End Source File
 # Begin Source File
 
-SOURCE=.\res\HerdManager.rc2
-# End Source File
-# Begin Source File
-
 SOURCE=.\res\Toolbar.bmp
 # End Source File
 # End Group
-# Begin Source File
-
-SOURCE=.\ReadMe.txt
-# End Source File
 # End Target
 # End Project
-# Section HerdManager : {BEF6E003-A874-101A-8BBA-00AA00300CAB}
-# 	2:5:Class:COleFont
-# 	2:10:HeaderFile:font.h
-# 	2:8:ImplFile:font.cpp
-# End Section
-# Section HerdManager : {7BF80981-BF32-101A-8BBB-00AA00300CAB}
-# 	2:5:Class:CPicture
-# 	2:10:HeaderFile:picture.h
-# 	2:8:ImplFile:picture.cpp
-# End Section
-# Section HerdManager : {BD6D5970-614A-11D2-883C-82729A77E70C}
-# 	2:21:DefaultSinkHeaderFile:browsefolder.h
-# 	2:16:DefaultSinkClass:CBrowseFolder
-# End Section
 # Section HerdManager : {0ECD9B62-23AA-11D0-B351-00A0C9055D8E}
 # 	2:5:Class:CMSHFlexGrid
 # 	2:10:HeaderFile:mshflexgrid.h
 # 	2:8:ImplFile:mshflexgrid.cpp
+# End Section
+# Section HerdManager : {BD6D5970-614A-11D2-883C-82729A77E70C}
+# 	2:21:DefaultSinkHeaderFile:browsefolder.h
+# 	2:16:DefaultSinkClass:CBrowseFolder
 # End Section
 # Section HerdManager : {0000050E-0000-0010-8000-00AA006D2EA4}
 # 	2:5:Class:CRecordset1
@@ -236,4 +202,14 @@ SOURCE=.\ReadMe.txt
 # Section HerdManager : {0ECD9B64-23AA-11D0-B351-00A0C9055D8E}
 # 	2:21:DefaultSinkHeaderFile:mshflexgrid.h
 # 	2:16:DefaultSinkClass:CMSHFlexGrid
+# End Section
+# Section HerdManager : {BEF6E003-A874-101A-8BBA-00AA00300CAB}
+# 	2:5:Class:COleFont
+# 	2:10:HeaderFile:font.h
+# 	2:8:ImplFile:font.cpp
+# End Section
+# Section HerdManager : {7BF80981-BF32-101A-8BBB-00AA00300CAB}
+# 	2:5:Class:CPicture
+# 	2:10:HeaderFile:picture.h
+# 	2:8:ImplFile:picture.cpp
 # End Section

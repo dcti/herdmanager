@@ -3,7 +3,7 @@
 
 #include "stdafx.h"
 #include "HerdManager.h"
-
+#include "AboutDialog.h"
 #include "MainFrm.h"
 
 #ifdef _DEBUG
@@ -18,10 +18,15 @@ static char THIS_FILE[] = __FILE__;
 BEGIN_MESSAGE_MAP(CHerdManagerApp, CWinApp)
 	//{{AFX_MSG_MAP(CHerdManagerApp)
 	ON_COMMAND(ID_APP_ABOUT, OnAppAbout)
-		// NOTE - the ClassWizard will add and remove mapping macros here.
-		//    DO NOT EDIT what you see in these blocks of generated code!
 	//}}AFX_MSG_MAP
 END_MESSAGE_MAP()
+
+
+/////////////////////////////////////////////////////////////////////////////
+// The one and only CHerdManagerApp object
+
+CHerdManagerApp theApp;
+
 
 /////////////////////////////////////////////////////////////////////////////
 // CHerdManagerApp construction
@@ -31,11 +36,6 @@ CHerdManagerApp::CHerdManagerApp()
 	// TODO: add construction code here,
 	// Place all significant initialization in InitInstance
 }
-
-/////////////////////////////////////////////////////////////////////////////
-// The one and only CHerdManagerApp object
-
-CHerdManagerApp theApp;
 
 /////////////////////////////////////////////////////////////////////////////
 // CHerdManagerApp initialization
@@ -74,8 +74,6 @@ BOOL CHerdManagerApp::InitInstance()
 		NULL);
 
 
-
-
 	// The one and only window has been initialized, so show and update it.
 	pFrame->ShowWindow(SW_SHOW);
 	pFrame->UpdateWindow();
@@ -83,58 +81,6 @@ BOOL CHerdManagerApp::InitInstance()
 	return TRUE;
 }
 
-/////////////////////////////////////////////////////////////////////////////
-// CHerdManagerApp message handlers
-
-
-
-
-
-/////////////////////////////////////////////////////////////////////////////
-// CAboutDlg dialog used for App About
-
-class CAboutDlg : public CDialog
-{
-public:
-	CAboutDlg();
-
-// Dialog Data
-	//{{AFX_DATA(CAboutDlg)
-	enum { IDD = IDD_ABOUTBOX };
-	//}}AFX_DATA
-
-	// ClassWizard generated virtual function overrides
-	//{{AFX_VIRTUAL(CAboutDlg)
-	protected:
-	virtual void DoDataExchange(CDataExchange* pDX);    // DDX/DDV support
-	//}}AFX_VIRTUAL
-
-// Implementation
-protected:
-	//{{AFX_MSG(CAboutDlg)
-		// No message handlers
-	//}}AFX_MSG
-	DECLARE_MESSAGE_MAP()
-};
-
-CAboutDlg::CAboutDlg() : CDialog(CAboutDlg::IDD)
-{
-	//{{AFX_DATA_INIT(CAboutDlg)
-	//}}AFX_DATA_INIT
-}
-
-void CAboutDlg::DoDataExchange(CDataExchange* pDX)
-{
-	CDialog::DoDataExchange(pDX);
-	//{{AFX_DATA_MAP(CAboutDlg)
-	//}}AFX_DATA_MAP
-}
-
-BEGIN_MESSAGE_MAP(CAboutDlg, CDialog)
-	//{{AFX_MSG_MAP(CAboutDlg)
-		// No message handlers
-	//}}AFX_MSG_MAP
-END_MESSAGE_MAP()
 
 // App command to run the dialog
 void CHerdManagerApp::OnAppAbout()
@@ -143,6 +89,4 @@ void CHerdManagerApp::OnAppAbout()
 	aboutDlg.DoModal();
 }
 
-/////////////////////////////////////////////////////////////////////////////
-// CHerdManagerApp message handlers
 
